@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Help Define the State of Agentic AI 2026 | CMPRSSN Research Program</title>
-<meta name="description" content="Help build the most grounded primary research on how organizations actually navigate agentic transformation. Take the survey or join a research interview. Q2 2026.">
-<meta property="og:title" content="Help Define the State of Agentic AI 2026">
-<meta property="og:description" content="Primary research on how organizations actually navigate agentic transformation. Not the strategy deck version. The operational reality.">
+<title>Human-Agent Composition is the New Primitive | CMPRSSN Field Research</title>
+<meta name="description" content="50 conversations across frontier and enterprise. The first field study of how people and agents operate together in production. Q2 2026.">
+<meta property="og:title" content="Human-Agent Composition is the New Primitive | CMPRSSN">
+<meta property="og:description" content="The first field study of how people and agents operate together in production. We're mapping the ones that work.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +25,6 @@
   --text-faint: #6a6560;
   --accent: #4f98a3;
   --accent-hover: #3d8090;
-  --accent-glow: rgba(79,152,163,0.15);
   --highlight: #7ec8d4;
   --highlight-dim: rgba(126,200,212,0.12);
   --green: #6daa45;
@@ -33,7 +32,6 @@
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  --content-width: 85ch;
   --wide-width: 1200px;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -46,11 +44,10 @@ a { color: var(--accent); text-decoration: none; }
 #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--highlight)); width: 0%; z-index: 9999; transition: width 0.1s linear; }
 
 /* NAV */
-#nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); transition: background 0.3s ease; }
-#nav.scrolled { background: rgba(10,10,10,0.97); }
+#nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
-.nav-logo img { width: 30px; height: 30px; border-radius: 5px; }
+.nav-logo img { width: 28px; height: 28px; border-radius: 5px; }
 .nav-logo-text { font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 500; color: var(--text); letter-spacing: 0.15em; text-transform: uppercase; }
 .nav-links { display: flex; align-items: center; gap: 2rem; }
 .nav-link { font-family: var(--font-body); font-size: 0.8125rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.04em; transition: color var(--transition); }
@@ -65,8 +62,7 @@ a { color: var(--accent); text-decoration: none; }
 .mobile-menu { display: none; padding: 1rem 2rem 1.5rem; border-top: 1px solid var(--border); }
 .mobile-menu-link { display: block; font-family: var(--font-body); font-size: 0.9375rem; color: var(--text-muted); padding: 0.75rem 0; text-decoration: none; border-bottom: 1px solid var(--border-subtle); }
 .mobile-menu-link:last-child { border-bottom: none; }
-.mobile-menu-link.cta { color: var(--accent); font-weight: 600; }
-
+.mobile-menu-link.cta { color: var(--highlight); font-weight: 600; }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .mobile-menu-toggle { display: block; }
@@ -74,22 +70,20 @@ a { color: var(--accent); text-decoration: none; }
 }
 
 /* HERO */
-.hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 8rem 0 6rem; }
-.hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 8rem 0 6rem; }
+.hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-bg canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.4) 0%, rgba(10,10,10,0.85) 60%, var(--bg) 100%); z-index: 1; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.82) 55%, var(--bg) 100%); z-index: 1; }
 .hero-content { position: relative; z-index: 2; max-width: var(--wide-width); margin: 0 auto; padding: 0 2rem; width: 100%; }
 .hero-eyebrow { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.2s forwards; }
 .hero-eyebrow::before { content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--highlight); }
-.eyebrow-tag { }
-.eyebrow-divider { width: 1px; height: 12px; background: var(--text-faint); }
-.eyebrow-text { color: var(--text-faint); }
-.hero-title { font-family: var(--font-display); font-size: clamp(3.2rem, 7.5vw, 7rem); font-weight: 600; line-height: 0.95; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1.5rem; max-width: 18ch; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.35s forwards; }
+.hero-title { font-family: var(--font-display); font-size: clamp(2.8rem, 6.5vw, 5.5rem); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: var(--text); margin-bottom: 0.5rem; max-width: 20ch; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.35s forwards; }
 .hero-title em { font-style: italic; color: var(--highlight); }
-.hero-subtitle { font-family: var(--font-display); font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 400; font-style: italic; color: var(--text-muted); margin-bottom: 1.5rem; max-width: 55ch; line-height: 1.4; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.5s forwards; }
-.hero-description { font-size: 1rem; color: var(--text-muted); max-width: 60ch; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.6s forwards; }
-.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.7s forwards; }
-.hero-scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; }
+.hero-title-second { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 400; font-style: italic; color: var(--text-muted); margin-bottom: 2rem; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.45s forwards; }
+.hero-subtitle { font-family: var(--font-body); font-size: clamp(0.95rem, 1.5vw, 1.1rem); color: var(--text-muted); margin-bottom: 1.25rem; max-width: 55ch; line-height: 1.65; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.55s forwards; }
+.hero-body { font-size: 0.9375rem; color: var(--text-faint); max-width: 58ch; margin-bottom: 2.5rem; line-height: 1.7; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.65s forwards; }
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fade-up 0.8s var(--ease-out) 0.75s forwards; }
+.scroll-indicator { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; }
 .scroll-line { width: 1px; height: 48px; background: linear-gradient(180deg, var(--highlight), transparent); animation: scroll-pulse 2s ease-in-out infinite; }
 @keyframes scroll-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -113,24 +107,24 @@ a { color: var(--accent); text-decoration: none; }
 .section-header { margin-bottom: 3rem; }
 .section-header.centered { text-align: center; }
 .section-label { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--highlight); margin-bottom: 1rem; display: block; }
-.section-header h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 600; line-height: 1.15; color: var(--text); max-width: 28ch; }
+.section-header h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.75rem); font-weight: 600; line-height: 1.15; color: var(--text); max-width: 30ch; }
 .section-header.centered h2 { max-width: none; }
-.section-subhead { font-family: var(--font-display); font-size: clamp(1.05rem, 1.8vw, 1.35rem); font-weight: 400; font-style: italic; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5; }
-.text-accent { color: var(--highlight); font-weight: 500; }
+.section-subhead { font-family: var(--font-display); font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 400; font-style: italic; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5; }
+.text-accent { color: var(--highlight); }
 
 /* TWO COLUMN */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-.two-col p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
+.two-col p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; font-size: 0.9375rem; }
 .two-col p:last-child { margin-bottom: 0; }
 .two-col strong { color: var(--text); }
 @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; gap: 1.5rem; } }
 
 /* GAP GRID */
 .gap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
-.gap-card { padding: 2rem 1.75rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; transition: transform var(--transition), border-color var(--transition); }
+.gap-card { padding: 1.75rem 1.5rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; transition: transform var(--transition), border-color var(--transition); }
 .gap-card:hover { transform: translateY(-2px); border-color: var(--border); }
 .gap-card.accent { border-color: var(--highlight); background: var(--highlight-dim); }
-.gap-stat { font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.5rem; }
+.gap-stat { font-family: var(--font-display); font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.4rem; }
 .gap-card.accent .gap-stat { color: var(--highlight); }
 .gap-source { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--text-muted); line-height: 1.4; }
 @media (max-width: 768px) { .gap-grid { grid-template-columns: 1fr 1fr; } }
@@ -138,451 +132,313 @@ a { color: var(--accent); text-decoration: none; }
 
 /* OBJECTIVES */
 .objectives-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.objective-card { padding: 2rem; border: 1px solid var(--border); background: var(--bg-surface-2); border-radius: 8px; transition: border-color var(--transition), transform var(--transition); }
+.objective-card { padding: 2rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; transition: border-color var(--transition), transform var(--transition); }
 .objective-card:hover { border-color: var(--highlight); transform: translateY(-2px); }
 .objective-number { font-family: var(--font-mono); font-size: 0.625rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.75rem; }
-.objective-card h3 { font-family: var(--font-display); font-size: 1.375rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
-.objective-card p { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; }
+.objective-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; }
+.objective-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
 @media (max-width: 768px) { .objectives-grid { grid-template-columns: 1fr; } }
 
 /* PATHS */
-.paths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
-.path-card { padding: 2.5rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 12px; display: flex; flex-direction: column; gap: 1.25rem; transition: border-color var(--transition); position: relative; }
+.paths-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
+.path-card { padding: 2.5rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 12px; display: flex; flex-direction: column; gap: 1rem; transition: border-color var(--transition); position: relative; }
 .path-card:hover { border-color: var(--accent); }
 .path-card.featured { border-color: var(--highlight); background: rgba(126,200,212,0.04); }
 .path-badge { position: absolute; top: -10px; right: 1.5rem; font-family: var(--font-mono); font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--highlight); color: var(--bg); padding: 0.3em 0.8em; border-radius: 3px; }
-.path-icon { }
 .path-time { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--highlight); }
-.path-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--text); }
-.path-card > p { font-size: 0.9375rem; color: var(--text-muted); line-height: 1.6; }
-.path-details { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: auto; }
+.path-card h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--text); }
+.path-card > p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+.path-details { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: auto; }
 .path-details li { font-size: 0.8125rem; color: var(--text-faint); padding-left: 1.25rem; position: relative; }
 .path-details li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
 @media (max-width: 768px) { .paths-grid { grid-template-columns: 1fr; } }
 
 /* ATTRIBUTION */
 .attribution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.attr-card { padding: 2rem; border: 1px solid var(--border); background: var(--bg-surface-2); border-radius: 8px; text-align: center; transition: border-color var(--transition); }
+.attr-card { padding: 1.75rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; }
 .attr-card:hover { border-color: var(--highlight); }
-.attr-icon { margin-bottom: 1rem; display: flex; justify-content: center; }
-.attr-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.75rem; }
-.attr-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+.attr-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+.attr-card p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; }
 @media (max-width: 768px) { .attribution-grid { grid-template-columns: 1fr; } }
 
 /* BENEFITS */
 .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
 .benefit-item { display: flex; gap: 1.25rem; padding: 1.75rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; transition: border-color var(--transition), transform var(--transition); }
 .benefit-item:hover { border-color: var(--highlight); transform: translateY(-2px); }
-.benefit-icon { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: flex-start; justify-content: center; padding-top: 2px; }
-.benefit-item h4 { font-family: var(--font-display); font-size: 1.125rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
-.benefit-item p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+.benefit-icon { flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: flex-start; justify-content: center; padding-top: 2px; }
+.benefit-item h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+.benefit-item p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.55; }
 @media (max-width: 768px) { .benefits-grid { grid-template-columns: 1fr; } }
-
-/* COMPLIANCE TILES (from v6) */
-.compliance-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin: 2.5rem 0; }
-.compliance-tile { padding: 2rem 1.75rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; transition: border-color var(--transition), transform var(--transition), background var(--transition); text-decoration: none; display: block; }
-.compliance-tile:hover { border-color: var(--highlight); transform: translateY(-2px); background: var(--bg-surface-2); }
-.compliance-tile.active { border-color: var(--highlight); background: rgba(126,200,212,0.04); }
-.compliance-date { font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--highlight); margin-bottom: 0.75rem; }
-.compliance-name { font-family: var(--font-display); font-size: 1.375rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
-.compliance-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 1rem; }
-.compliance-status { font-family: var(--font-mono); font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25em 0.7em; border-radius: 3px; display: inline-block; }
-.status-live { color: var(--green); background: rgba(109,170,69,0.1); border: 1px solid rgba(109,170,69,0.2); }
-.status-imminent { color: var(--highlight); background: var(--highlight-dim); border: 1px solid rgba(126,200,212,0.25); }
-.status-approaching { color: var(--yellow); background: rgba(232,175,52,0.1); border: 1px solid rgba(232,175,52,0.2); }
-.compliance-link { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--accent); letter-spacing: 0.04em; margin-top: 0.5rem; display: inline-block; }
-.compliance-tile:hover .compliance-link { color: var(--highlight); }
-
-/* URGENCY PROSE */
-.urgency-prose { margin-top: 2rem; }
-.urgency-prose p { color: var(--text-muted); line-height: 1.75; }
-.urgency-prose strong { color: var(--text); }
 
 /* ABOUT */
 .about-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start; }
-.about-text p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
+.about-text p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; font-size: 0.9375rem; }
 .about-text strong { color: var(--text); }
-.about-authors { font-size: 0.9375rem; margin-top: 1.5rem; color: var(--text-muted); }
+.about-authors { font-size: 0.875rem; margin-top: 1.5rem; color: var(--text-muted); }
 .about-authors strong { color: var(--text); }
-.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-.about-stat { padding: 1.75rem; border: 1px solid var(--border); background: var(--bg-surface-2); border-radius: 8px; text-align: center; }
-.about-stat .stat-number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; color: var(--text); line-height: 1; }
-.about-stat .stat-label { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.5rem; }
+.about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.about-stat { padding: 1.5rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; text-align: center; }
+.about-stat .stat-number { font-family: var(--font-display); font-size: 2.25rem; font-weight: 700; color: var(--text); line-height: 1; }
+.about-stat .stat-label { font-family: var(--font-mono); font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.4rem; }
 @media (max-width: 768px) { .about-layout { grid-template-columns: 1fr; gap: 2rem; } }
 
 /* FINAL CTA */
-.final-cta { padding: clamp(5rem, 10vw, 10rem) 0; text-align: center; position: relative; overflow: hidden; }
+.final-cta { padding: clamp(5rem, 10vw, 9rem) 0; text-align: center; position: relative; overflow: hidden; }
 .final-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(126,200,212,0.06) 0%, transparent 70%); pointer-events: none; }
-.final-cta h2 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 600; line-height: 1.1; color: var(--text); margin-bottom: 1rem; position: relative; }
-.final-cta > .section-inner > p { font-family: var(--font-display); font-size: clamp(1rem, 1.8vw, 1.25rem); font-style: italic; color: var(--text-muted); max-width: 55ch; margin: 0 auto 2.5rem; line-height: 1.5; position: relative; }
+.final-cta h2 { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 600; line-height: 1.1; color: var(--text); margin-bottom: 1rem; position: relative; }
+.final-cta > .section-inner > p { font-size: 0.9375rem; color: var(--text-muted); max-width: 52ch; margin: 0 auto 2.5rem; line-height: 1.6; position: relative; }
 .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
 
 /* FOOTER */
-.footer { padding: 3rem 0; border-top: 1px solid var(--border-subtle); }
+.footer { padding: 2.5rem 0; border-top: 1px solid var(--border-subtle); }
 .footer-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
 .footer-left { display: flex; align-items: center; gap: 1.5rem; }
 .footer-logo { display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; }
-.footer-logo img { width: 20px; height: 20px; border-radius: 3px; }
-.footer-copy { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-faint); letter-spacing: 0.06em; }
-.footer-right { }
+.footer-logo img { width: 18px; height: 18px; border-radius: 3px; }
+.footer-copy { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-faint); }
 .footer-contact { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-faint); }
-.footer-contact a { color: var(--accent); text-decoration: none; }
+.footer-contact a { color: var(--accent); }
 @media (max-width: 768px) { .footer-inner { flex-direction: column; gap: 1rem; text-align: center; } }
 
 /* REVEAL */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 480px) {
-  .compliance-grid { grid-template-columns: 1fr; }
-}
 </style>
 </head>
 <body>
 
-<!-- PROGRESS BAR -->
 <div id="progress-bar" aria-hidden="true"></div>
 
-<!-- NAVIGATION -->
-<nav id="nav" role="navigation" aria-label="Main navigation">
+<nav id="nav" role="navigation">
   <div class="nav-inner">
-    <a href="#" class="nav-logo" aria-label="CMPRSSN home">
+    <a href="#" class="nav-logo">
       <img src="data:image/png;base64,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" alt="CMPRSSN" />
       <span class="nav-logo-text">CMPRSSN</span>
     </a>
     <div class="nav-links">
-      <a href="#why" class="nav-link">Why This Research</a>
-      <a href="#participate" class="nav-link">Participate</a>
-      <a href="#what-you-get" class="nav-link">What You Get</a>
-      <a href="#participate" class="nav-cta-link">Contribute</a>
+      <a href="#gap" class="nav-link">The Gap</a>
+      <a href="#research" class="nav-link">The Research</a>
+      <a href="#participate" class="nav-link">Contribute</a>
+      <a href="#participate" class="nav-cta-link">Book a Conversation</a>
     </div>
     <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-menu" aria-hidden="true">
-    <a href="#why" class="mobile-menu-link">Why This Research</a>
-    <a href="#participate" class="mobile-menu-link">Participate</a>
-    <a href="#what-you-get" class="mobile-menu-link">What You Get</a>
-    <a href="#participate" class="mobile-menu-link cta">Contribute</a>
+    <a href="#gap" class="mobile-menu-link">The Gap</a>
+    <a href="#research" class="mobile-menu-link">The Research</a>
+    <a href="#participate" class="mobile-menu-link">Contribute</a>
+    <a href="#participate" class="mobile-menu-link cta">Book a Conversation</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<header id="hero" class="hero">
+<header class="hero">
   <div class="hero-bg">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">
-      <span class="eyebrow-tag">Primary Research</span>
-      <span class="eyebrow-divider"></span>
-      <span class="eyebrow-text">Q2 2026</span>
+      <span>Field Research</span>
+      <span style="width:1px;height:12px;background:var(--text-faint);display:inline-block;"></span>
+      <span style="color:var(--text-faint);">Q2 2026</span>
     </div>
-    <h1 class="hero-title">Help Define the State of <em>Agentic AI</em> in 2026</h1>
-    <p class="hero-subtitle">Not the strategy deck version. The operational reality.</p>
-    <p class="hero-description">We are building the most grounded picture of how organizations actually navigate agentic transformation — together. The pilots that stall. The workflows that get redesigned. The teams that break through. Your experience is the primary data. Your perspective shapes the findings.</p>
+    <h1 class="hero-title">Human-agent composition is the <em>new primitive.</em></h1>
+    <p class="hero-title-second">We're mapping the ones that work.</p>
+    <p class="hero-subtitle">50 conversations across frontier and enterprise. The first field study of how people and agents operate together in production.</p>
+    <p class="hero-body">Cursor hit $2B ARR with 300 people. A solo founder sold an agent-built company for $80M. Protocol teams run autonomous systems that handle 75% of onchain transactions. Something new is happening at every level of how work gets organized. The composition between you, your team and your agents, the autonomy boundaries you draw, the governance you've improvised because no playbook exists, these are the new organizational primitives. Brought to life by your unique stories and use cases as the State of Agentic AI Transformation Q2 2026.</p>
     <div class="hero-ctas">
-      <a href="#participate" class="btn btn-primary">Add Your Voice</a>
-      <a href="#why" class="btn btn-ghost">Learn More</a>
+      <a href="#participate" class="btn btn-primary">Book a Conversation <span class="btn-sub">30 min</span></a>
+      <a href="#research" class="btn btn-ghost">What we're studying</a>
     </div>
   </div>
-  <div class="hero-scroll-indicator" aria-hidden="true">
-    <div class="scroll-line"></div>
-  </div>
+  <div class="scroll-indicator" aria-hidden="true"><div class="scroll-line"></div></div>
 </header>
 
-<!-- WHY THIS RESEARCH -->
-<section id="why" class="section">
+<!-- THE GAP -->
+<section id="gap" class="section">
   <div class="section-inner">
     <div class="section-header">
       <span class="section-label reveal">The Gap</span>
-      <h2 class="reveal">Every major firm has published adoption statistics.<br>None of them answer the question that matters.</h2>
+      <h2 class="reveal">The consulting firms studied adoption. We're studying the future as it's emerging.</h2>
     </div>
     <div class="gap-grid reveal">
       <div class="gap-card">
-        <div class="gap-stat">4,454</div>
-        <div class="gap-source">PwC CEOs surveyed</div>
+        <div class="gap-stat">$2B</div>
+        <div class="gap-source">Cursor ARR, March 2026</div>
       </div>
       <div class="gap-card">
-        <div class="gap-stat">3,000</div>
-        <div class="gap-source">Deloitte directors-to-C-suite</div>
+        <div class="gap-stat">85K</div>
+        <div class="gap-source">GitHub stars, Browser Use</div>
       </div>
       <div class="gap-card">
-        <div class="gap-stat">95%</div>
-        <div class="gap-source">of pilots never scale</div>
+        <div class="gap-stat">38M</div>
+        <div class="gap-source">on-chain agent txns, Virtuals</div>
       </div>
       <div class="gap-card accent">
         <div class="gap-stat">0</div>
-        <div class="gap-source">ask what actually happens when a pilot meets reality</div>
+        <div class="gap-source">field studies of human-agent composition</div>
       </div>
     </div>
-    <div class="section-body two-col reveal">
-      <div class="col">
-        <p>The consulting industry has surveyed thousands of executives about strategy. The data tells us 88% of organizations are experimenting. That enterprise spending exceeded $300 billion in 2025. That agents are being adopted at scale.</p>
-        <p>What it does not tell us: what happens inside an organization when a pilot meets production, a workflow gets redesigned, or a middle manager decides to quietly block a deployment.</p>
+    <div class="two-col reveal">
+      <div>
+        <p>McKinsey surveyed 2,000 executives. BCG tracked 2,400. Deloitte polled 3,000. Adoption rates. Budget splits. Pilot failure percentages. All useful. None of it captures what's happening in practice at the edge.</p>
+        <p>What is new is not how organizations use AI. It's that a new kind of organization is emerging. One where the human-agent composition is the unit of work. Where the org chart is a config file. Where governance is a kill switch and autonomy boundaries you wrote yourself. The surveys cannot see this because they were not built to look.</p>
       </div>
-      <div class="col">
-        <p>That question requires primary research — structured conversations with practitioners who are in the field right now, hitting the walls, building operational knowledge that no strategy deck captures.</p>
-        <p class="text-accent">That is what this program produces — with your help.</p>
-        <p>The findings get published as <strong>The State of Agentic AI at Work, Q2 2026</strong>. A collaborative research report built entirely on primary data from people doing the work.</p>
+      <div>
+        <p>Our approach: the same research framework, two populations: enterprise leaders recompressing legacy structures, frontier operators who were born agentic. Side by side, the patterns that emerge are invisible from either vantage point alone.</p>
+        <p>The enterprise side shows where compositions break under institutional weight. The frontier side shows where they break under growth, speed, and the absence of structure. <span class="text-accent">Together they map the agentic future of work from both directions.</span></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- THE REGULATORY CLOCK -->
-<section id="urgency" class="section section-dark">
-  <div class="section-inner">
-    <div class="section-header">
-      <span class="section-label reveal">The Regulatory Clock</span>
-      <h2 class="reveal">The window for shaping your response is closing.</h2>
-      <p class="section-subhead reveal">Regulatory deadlines do not wait for organizational readiness. The organizations that redesign now set the terms. This research captures how practitioners are navigating that pressure — right now.</p>
-    </div>
-    <div class="compliance-grid reveal">
-      <a href="https://www.digital-operational-resilience-act.com/" target="_blank" class="compliance-tile active">
-        <div class="compliance-date">Live Now</div>
-        <div class="compliance-name">DORA</div>
-        <div class="compliance-desc">Digital operational resilience for financial services</div>
-        <span class="compliance-status status-live">Enforced</span>
-        <div class="compliance-link">Read summary →</div>
-      </a>
-      <a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive" target="_blank" class="compliance-tile active">
-        <div class="compliance-date">Live Now</div>
-        <div class="compliance-name">NIS2</div>
-        <div class="compliance-desc">Network and information security for critical infrastructure</div>
-        <span class="compliance-status status-live">Enforced</span>
-        <div class="compliance-link">Read summary →</div>
-      </a>
-      <a href="https://www.esma.europa.eu/esmas-activities/digital-finance-and-innovation/markets-crypto-assets-regulation-mica" target="_blank" class="compliance-tile">
-        <div class="compliance-date">July 2026</div>
-        <div class="compliance-name">MiCA</div>
-        <div class="compliance-desc">Markets in Crypto-Assets full application</div>
-        <span class="compliance-status status-imminent">4 Months</span>
-        <div class="compliance-link">Read summary →</div>
-      </a>
-      <a href="https://artificialintelligenceact.eu/" target="_blank" class="compliance-tile">
-        <div class="compliance-date">August 2026</div>
-        <div class="compliance-name">EU AI Act</div>
-        <div class="compliance-desc">High-risk system enforcement begins</div>
-        <span class="compliance-status status-imminent">5 Months</span>
-        <div class="compliance-link">Read summary →</div>
-      </a>
-      <a href="https://single-market-economy.ec.europa.eu/sectors/machinery_en" target="_blank" class="compliance-tile">
-        <div class="compliance-date">January 2027</div>
-        <div class="compliance-name">Machinery Reg</div>
-        <div class="compliance-desc">EU Machinery Regulation replaces Directive</div>
-        <span class="compliance-status status-approaching">10 Months</span>
-        <div class="compliance-link">Read summary →</div>
-      </a>
-    </div>
-    <div class="urgency-prose reveal">
-      <p>Each of these regulations assumes governance infrastructure for autonomous systems: audit trails, decision accountability, compliance monitoring. Organizations that have not redesigned their operations around agentic systems by these deadlines face compliance costs compounding on top of already-lost competitive ground. <strong>Your perspective on how these deadlines are shaping real decisions is exactly what the research needs.</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT WE'RE STUDYING -->
-<section id="studying" class="section">
+<!-- WHAT WE'RE MAPPING -->
+<section id="research" class="section section-dark">
   <div class="section-inner">
     <div class="section-header centered">
       <span class="section-label reveal">The Research</span>
-      <h2 class="reveal">Six questions the surveys cannot answer</h2>
-      <p class="section-subhead reveal">Together, we surface the operational data that macro surveys miss.</p>
+      <h2 class="reveal">Six open problems at the frontier. Not theoretical. Operational.</h2>
     </div>
     <div class="objectives-grid reveal">
       <div class="objective-card">
         <div class="objective-number">01</div>
-        <h3>The Coupling Inventory</h3>
-        <p>What specific configurations of human plus agent integration actually exist in production right now? Not in theory. In practice.</p>
+        <h3>Composition Anatomy</h3>
+        <p>What does a working human-agent composition look like in production? Not the architecture diagram. The daily reality. Where do you draw the autonomy boundary? How do you decide what runs without you? How has that line moved?</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">02</div>
-        <h3>The Failure Topology</h3>
-        <p>When transformations fail, where exactly do they break? Culture, structure, governance, or politics?</p>
+        <h3>Governance Without Hierarchy</h3>
+        <p>You built governance from scratch. Git history as audit trail. Markdown files as policy. Kill switches as a last resort. Onchain registries for agent identity. Some of these patterns are brilliant. Some are one bad decision from catastrophe. We want to know which.</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">03</div>
-        <h3>The Budget Reality</h3>
-        <p>How much of the spend actually goes to organizational change versus technology acquisition?</p>
+        <h3>The Failure Bestiary</h3>
+        <p>Enterprise AI fails politically. Frontier AI fails systemically. Hallucination cascades. Recursive loops eat compute. Agents cover their mistakes with fabricated data. Memory corruption at 3am when you are the only human in the loop. These need a real taxonomy built from real incidents.</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">04</div>
-        <h3>The Shadow Architecture</h3>
-        <p>What activity is happening below the organizational radar, and what does the gap between official and actual reveal?</p>
+        <h3>The New Economics</h3>
+        <p>Per-seat is dying. Nothing has replaced it. Replit's margins went negative when usage outran the model. When agents do the work, what is the unit of value? Outcome, token, task, hour of digital labor? You are running these experiments live. We are capturing which ones hold.</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">05</div>
-        <h3>The Political Economy</h3>
-        <p>Who wins and who loses from this transformation? Where does quiet resistance live?</p>
+        <h3>The Scaling Paradox</h3>
+        <p>What works at ten people does not work at a hundred. Cursor went to 300. Lovable reached 146. Growth forces Born Agentic firms to build the organizational complexity they were designed to avoid. The recompression crisis in reverse: composing new structure out of necessity as the organization scales.</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">06</div>
-        <h3>The Horizon Perception</h3>
-        <p>Do practitioners believe the 3 to 5 year viability window is real, and are regulatory deadlines accelerating or paralyzing them?</p>
+        <h3>The Composability Problem</h3>
+        <p>MCP has 97M monthly downloads. A2A has 150+ backers. In practice, your stack is three frameworks, two protocols, a custom memory layer, and duct tape. Where does composability work in production and where does it fall apart?</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PARTICIPATION PATHS -->
-<section id="participate" class="section section-dark">
+<!-- PARTICIPATE -->
+<section id="participate" class="section">
   <div class="section-inner">
     <div class="section-header centered">
-      <span class="section-label reveal">Participate</span>
-      <h2 class="reveal">Two ways to shape the findings</h2>
-      <p class="section-subhead reveal">Whether you have 8 minutes or 30, your perspective sharpens the picture for everyone.</p>
+      <span class="section-label reveal">Contribute</span>
+      <h2 class="reveal">A conversation between builders. Not a data extraction exercise.</h2>
+      <p class="section-subhead reveal">30 minutes with us to talk shop. Survey is optional.</p>
     </div>
     <div class="paths-grid reveal">
-      <!-- PATH 1: SURVEY -->
-      <div class="path-card">
-        <div class="path-icon">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <rect x="8" y="6" width="32" height="36" rx="3" stroke="var(--accent)" stroke-width="2"/>
-            <line x1="14" y1="16" x2="34" y2="16" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="14" y1="22" x2="30" y2="22" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="14" y1="28" x2="26" y2="28" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
-            <circle cx="14" cy="34" r="2" fill="var(--accent)"/>
-            <circle cx="22" cy="34" r="2" fill="var(--accent)" opacity="0.5"/>
-            <circle cx="30" cy="34" r="2" fill="var(--accent)" opacity="0.25"/>
-          </svg>
-        </div>
-        <div class="path-time">~8 minutes</div>
-        <h3>Take the Survey</h3>
-        <p>17 structured questions covering your organization's deployment patterns, failure modes, budget allocation, shadow activity, and urgency perception. Most answers take 10 seconds. A few ask for a sentence.</p>
-        <ul class="path-details">
-          <li>Multiple choice + two open-ended prompts</li>
-          <li>Anonymous by default</li>
-          <li>You choose your attribution level</li>
-        </ul>
-        <a href="https://cmprssn.notion.site/69ddfe91f1048357a921018c0b879ac0?pvs=105" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">Fill Out the Survey</a>
-      </div>
-      <!-- PATH 2: INTERVIEW -->
       <div class="path-card featured">
         <div class="path-badge">Highest Impact</div>
-        <div class="path-icon">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="18" r="8" stroke="var(--accent)" stroke-width="2"/>
-            <path d="M12 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M32 16l4-4m0 0l4 4m-4-4v8" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div class="path-time">~30 minutes</div>
-        <h3>Join a Research Interview</h3>
-        <p>A structured conversation between people who already know the landscape. You bring the operational reality. We bring the macro data. Where those two meet is where the research lives.</p>
+        <div class="path-time">30 minutes</div>
+        <h3>Join a Research Conversation</h3>
+        <p>You bring the operational specifics. Agent configs, governance workarounds, failure stories that never made a blog post. We bring the pattern data from 50 conversations across frontier and enterprise.</p>
         <ul class="path-details">
-          <li>10 core questions with follow-up probes</li>
-          <li>Not a sales call. A research conversation.</li>
-          <li>Your story becomes data that shapes the report</li>
+          <li>10 questions, probes based on your setup</li>
+          <li>Peer to peer conversations about best practices</li>
+          <li>Your patterns become data in one of the first field studies of the new primitive</li>
         </ul>
-        <a href="https://app.reclaim.ai/m/high/yalor-and-mikyo-hour" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">Book an Interview</a>
+        <a href="https://app.reclaim.ai/m/high/yalor-and-mikyo-hour" target="_blank" rel="noopener" class="btn btn-primary btn-full">Book a Conversation</a>
+      </div>
+      <div class="path-card">
+        <div class="path-time">5 min · optional</div>
+        <h3>Take the Survey</h3>
+        <p>12 questions. Your setup, your fleet, your governance, your economics, the hardest unsolved problem you face. Anonymous by default.</p>
+        <ul class="path-details">
+          <li>Multiple choice + one open-ended</li>
+          <li>Anonymous by default</li>
+          <li>You choose attribution level</li>
+        </ul>
+        <a href="https://cmprssn.notion.site/69ddfe91f1048357a921018c0b879ac0?pvs=105" target="_blank" rel="noopener" class="btn btn-ghost btn-full">Fill Out the Survey</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ATTRIBUTION -->
-<section id="attribution" class="section">
+<section id="attribution" class="section section-dark">
   <div class="section-inner">
     <div class="section-header centered">
       <span class="section-label reveal">Your Terms</span>
-      <h2 class="reveal">You control how you appear</h2>
-      <p class="section-subhead reveal">Every participant chooses their own attribution level.</p>
+      <h2 class="reveal">You decide how you appear.</h2>
     </div>
     <div class="attribution-grid reveal">
       <div class="attr-card">
-        <div class="attr-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="12" r="5" stroke="var(--text-muted)" stroke-width="1.5"/>
-            <path d="M8 26c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="var(--text-muted)" stroke-width="1.5"/>
-            <line x1="6" y1="16" x2="26" y2="16" stroke="var(--highlight)" stroke-width="2" stroke-linecap="round" transform="rotate(45 16 16)"/>
-          </svg>
-        </div>
-        <h3>Fully Anonymous</h3>
-        <p>No identifying information. Your data shapes the findings, but no one, including us, can trace it back to you.</p>
+        <h3>Anonymous</h3>
+        <p>Nothing traces back. Your data shapes the findings but no one can connect it to you.</p>
       </div>
       <div class="attr-card">
-        <div class="attr-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <rect x="4" y="8" width="24" height="16" rx="3" stroke="var(--text-muted)" stroke-width="1.5"/>
-            <text x="16" y="19" text-anchor="middle" fill="var(--highlight)" font-size="10" font-weight="600" font-family="Inter, sans-serif">FS</text>
-          </svg>
-        </div>
-        <h3>Industry Identified</h3>
-        <p>Your industry and role type appear in context, like "a VP of Engineering at a mid-size fintech," but your name stays private.</p>
+        <h3>Context Only</h3>
+        <p>"A solo builder running DeFi agents" or "a 12-person team doing agent-native ops." Name stays out.</p>
       </div>
       <div class="attr-card">
-        <div class="attr-icon">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="12" r="5" stroke="var(--highlight)" stroke-width="1.5"/>
-            <path d="M8 26c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="var(--highlight)" stroke-width="1.5"/>
-            <path d="M22 8l2 2 4-4" stroke="var(--highlight)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <h3>Named Contributor</h3>
-        <p>Your name and affiliation appear alongside your quotes, with your approval before publication. Named contributors elevate the report and join the conversation.</p>
+        <h3>Named</h3>
+        <p>Your name and project next to your quotes, approved before publication. Named contributors get the strongest network introductions.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- WHAT YOU GET -->
-<section id="what-you-get" class="section section-dark">
+<section id="what-you-get" class="section">
   <div class="section-inner">
     <div class="section-header centered">
       <span class="section-label reveal">In Return</span>
-      <h2 class="reveal">What participants receive</h2>
+      <h2 class="reveal">What contributors walk away with.</h2>
     </div>
     <div class="benefits-grid reveal">
       <div class="benefit-item">
         <div class="benefit-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5">
-            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke-linecap="round" stroke-linejoin="round"/>
-            <polyline points="13 2 13 9 20 9"/>
-          </svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
         </div>
         <div>
-          <h4>Early Access to the Report</h4>
-          <p>Contributors receive the full findings before public release. A first look at the data, the archetypes, and the patterns — before anyone else sees them.</p>
+          <h4>Your Coupling Diagnostic</h4>
+          <p>One-page snapshot of where your composition sits relative to 50 operations across frontier and enterprise. Fleet depth, governance maturity, composability, compression ratio. Benchmarked against the cohort. Does not exist elsewhere.</p>
         </div>
       </div>
       <div class="benefit-item">
         <div class="benefit-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
         </div>
         <div>
-          <h4>Join the Practitioner Network</h4>
-          <p>Named contributors become part of an active community of operators building the operational knowledge the industry needs right now.</p>
+          <h4>The Contributor Edition</h4>
+          <p>Full report before it goes public. Methodology, anonymized cases, your diagnostic overlaid on the cohort. The raw material, not the summary.</p>
         </div>
       </div>
       <div class="benefit-item">
         <div class="benefit-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
-          </svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
         <div>
-          <h4>Shape the Framework</h4>
-          <p>This is discovery-phase research. Your data does not just fill a report — it validates, refines, or discards the working framework. You are co-building the instrument.</p>
+          <h4>Peer Introductions</h4>
+          <p>Two or three operators in the study building the closest thing to what you are building. Or solving the problem you described. Builder to builder. Frontier to enterprise where the crossover matters.</p>
         </div>
       </div>
       <div class="benefit-item">
         <div class="benefit-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-          </svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
         <div>
-          <h4>Industry Insights</h4>
-          <p>Receive curated analysis on agentic AI adoption patterns and best practices — drawn directly from the primary data this research surfaces across industries and organizational stages.</p>
+          <h4>Industry Patterns</h4>
+          <p>How the new primitive is taking shape across the cohort. Which composition patterns are emerging. Which failure modes cluster. Which economic models hold under stress.</p>
         </div>
       </div>
     </div>
@@ -590,33 +446,21 @@ a { color: var(--accent); text-decoration: none; }
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="section">
+<section id="about" class="section section-dark">
   <div class="section-inner">
     <div class="about-layout reveal">
       <div class="about-text">
         <span class="section-label">About CMPRSSN</span>
-        <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 600; line-height: 1.15; color: var(--text); margin-bottom: 1.5rem;">Research that creates a category</h2>
-        <p>CMPRSSN studies the coupling between people and agentic systems — the specific configuration of human-agent integration that defines how an organization actually uses AI at the institutional level, not just the individual one.</p>
-        <p>This program is the first cycle of what becomes a semi-annual research series. Primary research that creates a speaking platform, a practitioner network, and a category-defining reference that compounds over cycles.</p>
-        <p class="about-authors">Research led by <strong>Mikyö Clark</strong>, <strong>Lisa Rousey-Rueth</strong>, <strong>Ryan Van Sickle</strong>, and <strong>Jeremias Pedreira</strong>.</p>
+        <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:600;line-height:1.15;color:var(--text);margin-bottom:1.5rem;">Research from inside the phenomenon.</h2>
+        <p>CMPRSSN studies human-agent compositions. What determines whether the integration between people and agents compounds or hits a wall. Three people, AI-native practice. Living and practicing at the frontier.</p>
+        <p>First cycle of a semi-annual research series. Fifty conversations, two populations: enterprise leaders navigating legacy, frontier operators who are building their legacies from scratch. The contrast is the method.</p>
+        <p class="about-authors">Research led by <strong>Yalor Mewn</strong>, <strong>Mikyö Clark</strong>, <strong>Lisa Rousey-Rueth</strong>, <strong>Ryan Van Sickle</strong>, and <strong>Jeremias Pedreira</strong>.</p>
       </div>
       <div class="about-stats">
-        <div class="about-stat">
-          <div class="stat-number">50</div>
-          <div class="stat-label">Primary interviews targeted</div>
-        </div>
-        <div class="about-stat">
-          <div class="stat-number">6</div>
-          <div class="stat-label">Research objectives</div>
-        </div>
-        <div class="about-stat">
-          <div class="stat-number">17</div>
-          <div class="stat-label">Survey questions</div>
-        </div>
-        <div class="about-stat">
-          <div class="stat-number">Q3</div>
-          <div class="stat-label">2026 publication</div>
-        </div>
+        <div class="about-stat"><div class="stat-number">50</div><div class="stat-label">Interviews</div></div>
+        <div class="about-stat"><div class="stat-number">25</div><div class="stat-label">Frontier</div></div>
+        <div class="about-stat"><div class="stat-number">6</div><div class="stat-label">Objectives</div></div>
+        <div class="about-stat"><div class="stat-number">Q3</div><div class="stat-label">2026 Publish</div></div>
       </div>
     </div>
   </div>
@@ -625,11 +469,11 @@ a { color: var(--accent); text-decoration: none; }
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="section-inner centered">
-    <h2 class="reveal">The research is happening now. Help shape it.</h2>
-    <p class="reveal">Every voice sharpens the picture. Whether you are leading a transformation, watching one stall, or building something new from scratch — your experience is the data the industry needs.</p>
+    <h2 class="reveal">The new primitive is being shaped now. By the people running it.</h2>
+    <p class="reveal">If you are building governance nobody designed, running economics nobody has modeled, scaling something that has never existed at this size, your 30 minutes makes this research real.</p>
     <div class="final-cta-buttons reveal">
-      <a href="https://cmprssn.notion.site/69ddfe91f1048357a921018c0b879ac0?pvs=105" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Take the Survey <span class="btn-sub">~8 min</span></a>
-      <a href="https://app.reclaim.ai/m/high/yalor-and-mikyo-hour" target="_blank" rel="noopener noreferrer" class="btn btn-accent">Book an Interview <span class="btn-sub">~30 min</span></a>
+      <a href="https://app.reclaim.ai/m/high/yalor-and-mikyo-hour" target="_blank" rel="noopener" class="btn btn-primary">Book a Conversation <span class="btn-sub">30 min</span></a>
+      <a href="https://cmprssn.notion.site/69ddfe91f1048357a921018c0b879ac0?pvs=105" target="_blank" rel="noopener" class="btn btn-accent">Take the Survey <span class="btn-sub">5 min</span></a>
     </div>
   </div>
 </section>
@@ -642,21 +486,21 @@ a { color: var(--accent); text-decoration: none; }
         <img src="data:image/png;base64,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" alt="CMPRSSN" />
         <span>CMPRSSN</span>
       </div>
-      <p class="footer-copy">Agentic Intelligence Program · Q2 2026</p>
+      <p class="footer-copy">Agentic Intelligence Program · Frontier Track · Q2 2026</p>
     </div>
-    <div class="footer-right">
+    <div>
       <p class="footer-contact">Questions? <a href="mailto:growth@cmprssn.xyz">growth@cmprssn.xyz</a></p>
     </div>
   </div>
 </footer>
 
 <script>
-// ─── HERO CANVAS: Cybernetic waveform background ─────────────────────
+// HERO CANVAS — node network / cybernetic mesh
 (function() {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  let w, h, time = 0, animFrame;
+  let w, h, time = 0, nodes = [];
 
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -667,116 +511,116 @@ a { color: var(--accent); text-decoration: none; }
     canvas.style.width = w + 'px';
     canvas.style.height = h + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initNodes();
+  }
+
+  function initNodes() {
+    nodes = [];
+    const count = Math.floor((w * h) / 18000);
+    for (let i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: 1.5 + Math.random() * 1.5,
+        phase: Math.random() * Math.PI * 2
+      });
+    }
   }
 
   function draw() {
     ctx.clearRect(0, 0, w, h);
-    time += 0.003;
+    time += 0.004;
 
-    // Grid lines (subtle)
-    ctx.strokeStyle = 'rgba(126,200,212,0.04)';
+    // Subtle grid
+    ctx.strokeStyle = 'rgba(126,200,212,0.025)';
     ctx.lineWidth = 0.5;
-    const gridSize = 60;
-    for (let x = 0; x < w; x += gridSize) {
-      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
-    }
-    for (let y = 0; y < h; y += gridSize) {
-      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
-    }
+    for (let x = 0; x < w; x += 80) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+    for (let y = 0; y < h; y += 80) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
 
-    // Waveform layers — signal/sound inspired
-    const waves = [
-      { y: h * 0.35, amp: 35, freq: 0.008, speed: 1.0, alpha: 0.12, color: '126,200,212' },
-      { y: h * 0.40, amp: 25, freq: 0.012, speed: 0.7, alpha: 0.08, color: '79,152,163' },
-      { y: h * 0.45, amp: 45, freq: 0.005, speed: 1.3, alpha: 0.06, color: '126,200,212' },
-      { y: h * 0.55, amp: 20, freq: 0.015, speed: 0.9, alpha: 0.10, color: '79,152,163' },
-      { y: h * 0.60, amp: 30, freq: 0.009, speed: 0.6, alpha: 0.07, color: '126,200,212' },
-      { y: h * 0.70, amp: 15, freq: 0.018, speed: 1.1, alpha: 0.05, color: '79,152,163' },
-    ];
+    // Update and draw nodes
+    const connectionDist = 140;
+    for (let i = 0; i < nodes.length; i++) {
+      const n = nodes[i];
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > w) n.vx *= -1;
+      if (n.y < 0 || n.y > h) n.vy *= -1;
 
-    waves.forEach(wave => {
+      const pulse = 0.5 + 0.5 * Math.sin(time * 1.5 + n.phase);
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(' + wave.color + ',' + wave.alpha + ')';
-      ctx.lineWidth = 1.5;
-      for (let x = 0; x <= w; x += 2) {
-        const distFromCenter = Math.abs(x - w/2) / (w/2);
-        const envelope = Math.pow(1 - distFromCenter, 1.5);
-        const y = wave.y + Math.sin(x * wave.freq + time * wave.speed) * wave.amp * envelope
-                  + Math.sin(x * wave.freq * 2.3 + time * wave.speed * 1.7) * wave.amp * 0.3 * envelope;
-        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-    });
-
-    // Signal dots at intersections
-    for (let i = 0; i < 12; i++) {
-      const x = (w / 13) * (i + 1);
-      const wave = waves[i % waves.length];
-      const distFromCenter = Math.abs(x - w/2) / (w/2);
-      const envelope = Math.pow(1 - distFromCenter, 1.5);
-      const y = wave.y + Math.sin(x * wave.freq + time * wave.speed) * wave.amp * envelope;
-      const pulse = 0.5 + 0.5 * Math.sin(time * 2 + i);
-      ctx.beginPath();
-      ctx.arc(x, y, 2 + pulse, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(126,200,212,' + (0.15 + pulse * 0.15) + ')';
+      ctx.arc(n.x, n.y, n.r * (0.8 + pulse * 0.4), 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(126,200,212,' + (0.12 + pulse * 0.12) + ')';
       ctx.fill();
+
+      // Connections
+      for (let j = i + 1; j < nodes.length; j++) {
+        const m = nodes[j];
+        const dx = n.x - m.x, dy = n.y - m.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < connectionDist) {
+          const alpha = (1 - dist / connectionDist) * 0.08;
+          ctx.beginPath();
+          ctx.moveTo(n.x, n.y);
+          ctx.lineTo(m.x, m.y);
+          ctx.strokeStyle = 'rgba(126,200,212,' + alpha + ')';
+          ctx.lineWidth = 0.7;
+          ctx.stroke();
+        }
+      }
     }
 
-    // Horizontal scan line
-    const scanY = (h * 0.3) + Math.sin(time * 0.5) * h * 0.2;
-    const scanGrad = ctx.createLinearGradient(0, scanY - 1, 0, scanY + 1);
-    scanGrad.addColorStop(0, 'rgba(126,200,212,0)');
-    scanGrad.addColorStop(0.5, 'rgba(126,200,212,0.06)');
-    scanGrad.addColorStop(1, 'rgba(126,200,212,0)');
-    ctx.fillStyle = scanGrad;
-    ctx.fillRect(0, scanY - 30, w, 60);
+    // Central waveform accent
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(126,200,212,0.06)';
+    ctx.lineWidth = 1.2;
+    for (let x = 0; x <= w; x += 3) {
+      const distFromCenter = Math.abs(x - w/2) / (w/2);
+      const envelope = Math.pow(1 - distFromCenter, 2);
+      const y = h * 0.5 + Math.sin(x * 0.008 + time) * 40 * envelope + Math.sin(x * 0.02 + time * 1.5) * 15 * envelope;
+      if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
 
-    animFrame = requestAnimationFrame(draw);
+    requestAnimationFrame(draw);
   }
 
   resize();
   draw();
-  window.addEventListener('resize', () => { resize(); });
+  window.addEventListener('resize', resize);
 })();
 
-// ─── PROGRESS BAR ─────────────────────────────────────────────────────────
+// PROGRESS BAR
 window.addEventListener('scroll', () => {
   const h = document.documentElement.scrollHeight - window.innerHeight;
   if (h > 0) document.getElementById('progress-bar').style.width = (window.scrollY / h * 100) + '%';
 });
 
-// ─── REVEAL ON SCROLL ─────────────────────────────────────────────────────
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 60);
-      revealObserver.unobserve(entry.target);
-    }
+// REVEAL
+const ro = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); ro.unobserve(e.target); }
   });
 }, { threshold: 0.15 });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 
-// ─── NAV SCROLL STATE ────────────────────────────────────────────────────
+// NAV SCROLL
 window.addEventListener('scroll', () => {
-  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+  document.getElementById('nav').style.borderBottomColor = window.scrollY > 50 ? 'var(--border)' : 'var(--border-subtle)';
 });
 
-// ─── MOBILE MENU ─────────────────────────────────────────────────────────
-const menuToggle = document.querySelector('.mobile-menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-if (menuToggle && mobileMenu) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-    mobileMenu.setAttribute('aria-hidden', !isOpen);
+// MOBILE MENU
+const mt = document.querySelector('.mobile-menu-toggle');
+const mm = document.querySelector('.mobile-menu');
+if (mt && mm) {
+  mt.addEventListener('click', () => {
+    const open = mm.classList.toggle('open');
+    mt.setAttribute('aria-expanded', open);
   });
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-    });
-  });
+  mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mm.classList.remove('open');
+    mt.setAttribute('aria-expanded', 'false');
+  }));
 }
 </script>
 </body>
