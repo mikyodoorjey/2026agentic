@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Human-Agent Composition is the New Primitive | CMPRSSN Field Research</title>
-<meta name="description" content="50 conversations across frontier and enterprise. The first field study of how people and agents operate together in production. Q2 2026.">
+<meta name="description" content="50 conversations with the people building the operational playbook for agentic work. The first field study of how humans and agents operate together in production.">
 <meta property="og:title" content="Human-Agent Composition is the New Primitive | CMPRSSN">
 <meta property="og:description" content="The first field study of how people and agents operate together in production. We're mapping the ones that work.">
 <meta property="og:type" content="website">
@@ -39,11 +39,7 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 1.125rem; line-height: 1.75; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 a { color: var(--accent); text-decoration: none; }
-
-/* PROGRESS */
 #progress-bar { position: fixed; top: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--highlight)); width: 0%; z-index: 9999; transition: width 0.1s linear; }
-
-/* NAV */
 #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 2rem; height: 64px; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
@@ -68,8 +64,6 @@ a { color: var(--accent); text-decoration: none; }
   .mobile-menu-toggle { display: block; }
   .mobile-menu.open { display: block; }
 }
-
-/* HERO */
 .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; padding: 8rem 0 6rem; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-bg canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
@@ -87,8 +81,6 @@ a { color: var(--accent); text-decoration: none; }
 .scroll-line { width: 1px; height: 48px; background: linear-gradient(180deg, var(--highlight), transparent); animation: scroll-pulse 2s ease-in-out infinite; }
 @keyframes scroll-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-/* BUTTONS */
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.8125rem; letter-spacing: 0.08em; padding: 0.85rem 2rem; border-radius: 4px; text-decoration: none; transition: all var(--transition); cursor: pointer; border: none; }
 .btn-primary { background: var(--accent); color: var(--bg); }
 .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(79,152,163,0.25); }
@@ -98,8 +90,6 @@ a { color: var(--accent); text-decoration: none; }
 .btn-accent:hover { background: #6ab8c4; transform: translateY(-2px); }
 .btn-full { width: 100%; justify-content: center; }
 .btn-sub { font-size: 0.6875rem; opacity: 0.7; margin-left: 0.25rem; }
-
-/* SECTIONS */
 .section { padding: clamp(4rem, 7vw, 7rem) 0; border-bottom: 1px solid var(--border-subtle); }
 .section:last-of-type { border-bottom: none; }
 .section-dark { background: var(--bg-surface); }
@@ -111,15 +101,11 @@ a { color: var(--accent); text-decoration: none; }
 .section-header.centered h2 { max-width: none; }
 .section-subhead { font-family: var(--font-display); font-size: clamp(1rem, 1.6vw, 1.2rem); font-weight: 400; font-style: italic; color: var(--text-muted); margin-top: 0.75rem; line-height: 1.5; }
 .text-accent { color: var(--highlight); }
-
-/* TWO COLUMN */
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
 .two-col p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; font-size: 0.9375rem; }
 .two-col p:last-child { margin-bottom: 0; }
 .two-col strong { color: var(--text); }
 @media (max-width: 768px) { .two-col { grid-template-columns: 1fr; gap: 1.5rem; } }
-
-/* GAP GRID */
 .gap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-bottom: 3rem; }
 .gap-card { padding: 1.75rem 1.5rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; transition: transform var(--transition), border-color var(--transition); }
 .gap-card:hover { transform: translateY(-2px); border-color: var(--border); }
@@ -129,8 +115,6 @@ a { color: var(--accent); text-decoration: none; }
 .gap-source { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.06em; color: var(--text-muted); line-height: 1.4; }
 @media (max-width: 768px) { .gap-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .gap-grid { grid-template-columns: 1fr; } }
-
-/* OBJECTIVES */
 .objectives-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .objective-card { padding: 2rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; transition: border-color var(--transition), transform var(--transition); }
 .objective-card:hover { border-color: var(--highlight); transform: translateY(-2px); }
@@ -138,8 +122,6 @@ a { color: var(--accent); text-decoration: none; }
 .objective-card h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; }
 .objective-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
 @media (max-width: 768px) { .objectives-grid { grid-template-columns: 1fr; } }
-
-/* PATHS */
 .paths-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; max-width: 900px; margin: 0 auto; }
 .path-card { padding: 2.5rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 12px; display: flex; flex-direction: column; gap: 1rem; transition: border-color var(--transition); position: relative; }
 .path-card:hover { border-color: var(--accent); }
@@ -152,16 +134,12 @@ a { color: var(--accent); text-decoration: none; }
 .path-details li { font-size: 0.8125rem; color: var(--text-faint); padding-left: 1.25rem; position: relative; }
 .path-details li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
 @media (max-width: 768px) { .paths-grid { grid-template-columns: 1fr; } }
-
-/* ATTRIBUTION */
 .attribution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .attr-card { padding: 1.75rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; }
 .attr-card:hover { border-color: var(--highlight); }
 .attr-card h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
 .attr-card p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.5; }
 @media (max-width: 768px) { .attribution-grid { grid-template-columns: 1fr; } }
-
-/* BENEFITS */
 .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
 .benefit-item { display: flex; gap: 1.25rem; padding: 1.75rem; border: 1px solid var(--border); background: var(--bg-surface); border-radius: 8px; transition: border-color var(--transition), transform var(--transition); }
 .benefit-item:hover { border-color: var(--highlight); transform: translateY(-2px); }
@@ -169,8 +147,6 @@ a { color: var(--accent); text-decoration: none; }
 .benefit-item h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
 .benefit-item p { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.55; }
 @media (max-width: 768px) { .benefits-grid { grid-template-columns: 1fr; } }
-
-/* ABOUT */
 .about-layout { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start; }
 .about-text p { color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; font-size: 0.9375rem; }
 .about-text strong { color: var(--text); }
@@ -181,15 +157,11 @@ a { color: var(--accent); text-decoration: none; }
 .about-stat .stat-number { font-family: var(--font-display); font-size: 2.25rem; font-weight: 700; color: var(--text); line-height: 1; }
 .about-stat .stat-label { font-family: var(--font-mono); font-size: 0.625rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.4rem; }
 @media (max-width: 768px) { .about-layout { grid-template-columns: 1fr; gap: 2rem; } }
-
-/* FINAL CTA */
 .final-cta { padding: clamp(5rem, 10vw, 9rem) 0; text-align: center; position: relative; overflow: hidden; }
 .final-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(126,200,212,0.06) 0%, transparent 70%); pointer-events: none; }
 .final-cta h2 { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 600; line-height: 1.1; color: var(--text); margin-bottom: 1rem; position: relative; }
 .final-cta > .section-inner > p { font-size: 0.9375rem; color: var(--text-muted); max-width: 52ch; margin: 0 auto 2.5rem; line-height: 1.6; position: relative; }
 .final-cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
-
-/* FOOTER */
 .footer { padding: 2.5rem 0; border-top: 1px solid var(--border-subtle); }
 .footer-inner { max-width: var(--wide-width); margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
 .footer-left { display: flex; align-items: center; gap: 1.5rem; }
@@ -199,19 +171,14 @@ a { color: var(--accent); text-decoration: none; }
 .footer-contact { font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-faint); }
 .footer-contact a { color: var(--accent); }
 @media (max-width: 768px) { .footer-inner { flex-direction: column; gap: 1rem; text-align: center; } }
-
-/* TEAM */
 .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 800px; margin: 0 auto; }
 .team-member { display: flex; gap: 1.5rem; align-items: flex-start; }
 .team-photo { width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0; object-fit: cover; border: 1px solid var(--border); }
-.team-photo-placeholder { width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0; background: var(--bg-surface-2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-faint); letter-spacing: 0.05em; }
 .team-name { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--text); margin-bottom: 0.35rem; }
 .team-name a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); transition: border-color var(--transition); }
 .team-name a:hover { border-color: var(--highlight); }
 .team-bio { font-size: 0.8125rem; color: var(--text-muted); line-height: 1.55; }
 @media (max-width: 768px) { .team-grid { grid-template-columns: 1fr; gap: 2rem; } }
-
-/* REVEAL */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
@@ -228,8 +195,9 @@ a { color: var(--accent); text-decoration: none; }
     </a>
     <div class="nav-links">
       <a href="#gap" class="nav-link">The Gap</a>
-      <a href="#research" class="nav-link">The Research</a>
+      <a href="#research" class="nav-link">Research</a>
       <a href="#participate" class="nav-link">Contribute</a>
+      <a href="#about" class="nav-link">About</a>
       <a href="#participate" class="nav-cta-link">Book a Conversation</a>
     </div>
     <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -238,8 +206,9 @@ a { color: var(--accent); text-decoration: none; }
   </div>
   <div class="mobile-menu" aria-hidden="true">
     <a href="#gap" class="mobile-menu-link">The Gap</a>
-    <a href="#research" class="mobile-menu-link">The Research</a>
+    <a href="#research" class="mobile-menu-link">Research</a>
     <a href="#participate" class="mobile-menu-link">Contribute</a>
+    <a href="#about" class="mobile-menu-link">About</a>
     <a href="#participate" class="mobile-menu-link cta">Book a Conversation</a>
   </div>
 </nav>
@@ -252,14 +221,14 @@ a { color: var(--accent); text-decoration: none; }
   </div>
   <div class="hero-content">
     <div class="hero-eyebrow">
-      <span>Field Research</span>
+      <span>Agentic Intelligence Program</span>
       <span style="width:1px;height:12px;background:var(--text-faint);display:inline-block;"></span>
       <span style="color:var(--text-faint);">Q2 2026</span>
     </div>
     <h1 class="hero-title">Human-agent composition is the <em>new primitive.</em></h1>
     <p class="hero-title-second">We're mapping the ones that work.</p>
-    <p class="hero-subtitle">50 conversations across frontier and enterprise. The first field study of how people and agents operate together in production.</p>
-    <p class="hero-body">Cursor hit $2B ARR with 300 people. A solo founder sold an agent-built company for $80M. Protocol teams run autonomous systems that handle 75% of onchain transactions. How you and your agents divide labor, the autonomy boundaries you draw, the governance you improvised because no playbook exists, these are the organizational primitives we are documenting as the State of Agentic AI Transformation Q2 2026.</p>
+    <p class="hero-subtitle">50 conversations with the people building the operational playbook for agentic work. The first field study of how humans and agents operate together in production.</p>
+    <p class="hero-body">Cursor hit $2B ARR with 300 people. A solo founder sold an agent-built company for $80M. Protocol teams run autonomous systems that handle 75% of onchain transactions. How you divide labor with your agents, the autonomy boundaries you draw, the governance you improvised because no playbook exists. These are the new organizational primitives.</p>
     <div class="hero-ctas">
       <a href="#participate" class="btn btn-primary">Book a Conversation <span class="btn-sub">30 min</span></a>
       <a href="#research" class="btn btn-ghost">What we're studying</a>
@@ -273,7 +242,7 @@ a { color: var(--accent); text-decoration: none; }
   <div class="section-inner">
     <div class="section-header">
       <span class="section-label reveal">The Gap</span>
-      <h2 class="reveal">Everyone surveyed executives. Nobody talked to the builders.</h2>
+      <h2 class="reveal">Everyone surveyed executives, but almost no research exists from the frontier.</h2>
     </div>
     <div class="gap-grid reveal">
       <div class="gap-card">
@@ -295,19 +264,65 @@ a { color: var(--accent); text-decoration: none; }
     </div>
     <div class="two-col reveal">
       <div>
-        <p>McKinsey surveyed 2,000 executives. BCG tracked 2,400. Deloitte polled 3,000. Adoption rates. Budget splits. Pilot failure percentages. All useful at the enterprise scale. None of it covers what is happening at the edge.</p>
-        <p>A different kind of organization is emerging. The human-agent composition is the unit of work. The org chart is a config file. Governance is a kill switch and autonomy boundaries you wrote yourself. The surveys were not built to see this.</p>
+        <p>McKinsey, BCG, Deloitte: thousands of executives surveyed on adoption rates, budget splits, pilot failures. None of it covers what is happening at the edge: where the org chart is a config file, governance is a kill switch, and the human-agent composition is the unit of work.</p>
       </div>
       <div>
-        <p>Same research framework, two populations: enterprise leaders recompressing legacy structures, frontier operators who were born agentic. The patterns that emerge from placing these side by side are invisible from either vantage point alone.</p>
-        <p>The enterprise half shows where compositions break under institutional weight. The frontier half shows where they break under growth, speed, and absent structure. <span class="text-accent">Together they map agentic work from both directions.</span></p>
+        <p>The frontier is producing organizational patterns that have no precedent. New economic models, new governance primitives, new ways of dividing labor between humans and machines. This research catalogs what is emerging, names the patterns that work, and builds the first taxonomy of what breaks. The study also includes enterprise leaders driving AI adoption, so the data maps agentic work from both directions.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT WE'RE MAPPING -->
-<section id="research" class="section section-dark">
+<!-- IN RETURN -->
+<section id="what-you-get" class="section section-dark">
+  <div class="section-inner">
+    <div class="section-header centered">
+      <span class="section-label reveal">In Return</span>
+      <h2 class="reveal">What contributors receive.</h2>
+    </div>
+    <div class="benefits-grid reveal">
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <h4>Your Coupling Diagnostic</h4>
+          <p>One-page snapshot of where your composition sits relative to the full cohort. Fleet depth, governance maturity, composability, compression ratio. Benchmarked against 50 operations.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+        </div>
+        <div>
+          <h4>The Contributor Edition</h4>
+          <p>Full report before it goes public. Methodology, anonymized cases, your diagnostic overlaid on the cohort. The raw material for your own decisions.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div>
+          <h4>Peer Introductions</h4>
+          <p>Two or three operators in the study building the closest thing to what you are building. Or solving the problem you described. Builder to builder, matched on operational specifics.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div>
+          <h4>Industry Patterns</h4>
+          <p>Which composition patterns are emerging across the cohort. Which governance models hold. Which failure modes cluster. Which economic structures survive stress. The first map of its kind.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE RESEARCH -->
+<section id="research" class="section">
   <div class="section-inner">
     <div class="section-header centered">
       <span class="section-label reveal">The Research</span>
@@ -317,39 +332,39 @@ a { color: var(--accent); text-decoration: none; }
       <div class="objective-card">
         <div class="objective-number">01</div>
         <h3>Composition Anatomy</h3>
-        <p>What does a working human-agent composition look like in production? The daily reality, not the architecture diagram. Where do you draw the autonomy boundary? How do you decide what runs without you? How has that line moved?</p>
+        <p>What does a working human-agent composition look like in production? Where do you draw the autonomy boundary, and how has that line moved as your operation scaled?</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">02</div>
         <h3>Governance Without Hierarchy</h3>
-        <p>You built governance from scratch. Git history as audit trail. Markdown files as policy. Kill switches as a last resort. Onchain registries for agent identity. Some of these patterns are brilliant. Some are one bad decision from catastrophe. We want to know which.</p>
+        <p>Git history as audit trail. Markdown as policy. Kill switches. Onchain registries. You built governance from scratch because nothing existed. We are cataloging which patterns hold and which are one bad decision from catastrophe.</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">03</div>
         <h3>The Failure Bestiary</h3>
-        <p>Enterprise AI fails politically. Frontier AI fails systemically. Hallucination cascades. Recursive loops eat compute. Agents cover their mistakes with fabricated data. Memory corruption at 3am when you are the only human in the loop. These need a real taxonomy built from real incidents.</p>
+        <p>Hallucination cascades. Recursive loops that eat compute. Agents fabricating data. Memory corruption at 3am when you are the only human in the loop. These failure modes need a taxonomy built from real incidents, not theory.</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">04</div>
         <h3>The New Economics</h3>
-        <p>Per-seat is dying. Nothing has replaced it. Replit's margins went negative when usage outran the model. When agents do the work, what is the unit of value? Outcome, token, task, hour of digital labor? You are running these experiments live. We are capturing which ones hold.</p>
+        <p>Per-seat is dying. When agents do the work, what is the unit of value? Outcome, token, task, hour of digital labor? You are running these pricing experiments live. We are capturing which ones hold.</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">05</div>
         <h3>The Scaling Paradox</h3>
-        <p>What works at ten people does not work at a hundred. Cursor went to 300. Lovable reached 146. Growth forces Born Agentic firms to build the organizational complexity they were designed to avoid. The recompression crisis in reverse: composing new structure out of necessity as the organization scales.</p>
+        <p>What works at ten people does not work at a hundred. Growth forces Born Agentic firms to build the organizational complexity they were designed to avoid. We are documenting how that tension resolves.</p>
       </div>
       <div class="objective-card">
         <div class="objective-number">06</div>
         <h3>The Composability Problem</h3>
-        <p>MCP has 97M monthly downloads. A2A has 150+ backers. In practice, your stack is three frameworks, two protocols, a custom memory layer, and duct tape. Where does composability work in production and where does it fall apart?</p>
+        <p>MCP has 97M monthly downloads. A2A has 150+ backers. In practice, your stack is three frameworks, two protocols, a custom memory layer, and duct tape. We are mapping where composability holds in production and where it falls apart.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PARTICIPATE -->
-<section id="participate" class="section">
+<!-- CONTRIBUTE -->
+<section id="participate" class="section section-dark">
   <div class="section-inner">
     <div class="section-header centered">
       <span class="section-label reveal">Contribute</span>
@@ -361,16 +376,16 @@ a { color: var(--accent); text-decoration: none; }
         <div class="path-badge">Highest Impact</div>
         <div class="path-time">30 minutes</div>
         <h3>Join a Research Conversation</h3>
-        <p>You bring the operational specifics. Agent configs, governance workarounds, failure stories that never made a blog post. We bring the pattern data from 50 conversations across frontier and enterprise.</p>
+        <p>You bring the operational specifics. Agent configs, governance workarounds, failure stories that never made a blog post. We bring the emerging pattern data from across the cohort.</p>
         <ul class="path-details">
           <li>10 questions, probes based on your setup</li>
           <li>Peer conversation about how you work with agents</li>
-          <li>Your patterns become data in one of the first field studies of the new primitive</li>
+          <li>Your patterns become data in the first field study of the new primitive</li>
         </ul>
         <a href="https://app.reclaim.ai/m/high/yalor-and-mikyo-hour" target="_blank" rel="noopener" class="btn btn-primary btn-full">Book a Conversation</a>
       </div>
       <div class="path-card">
-        <div class="path-time">5 min · optional</div>
+        <div class="path-time">5 min &middot; optional</div>
         <h3>Take the Survey</h3>
         <p>12 questions. Your setup, your fleet, your governance, your economics, the hardest unsolved problem you face. Anonymous by default.</p>
         <ul class="path-details">
@@ -384,8 +399,8 @@ a { color: var(--accent); text-decoration: none; }
   </div>
 </section>
 
-<!-- ATTRIBUTION -->
-<section id="attribution" class="section section-dark">
+<!-- YOUR TERMS -->
+<section id="attribution" class="section">
   <div class="section-inner">
     <div class="section-header centered">
       <span class="section-label reveal">Your Terms</span>
@@ -408,54 +423,6 @@ a { color: var(--accent); text-decoration: none; }
   </div>
 </section>
 
-<!-- WHAT YOU GET -->
-<section id="what-you-get" class="section">
-  <div class="section-inner">
-    <div class="section-header centered">
-      <span class="section-label reveal">In Return</span>
-      <h2 class="reveal">What contributors receive.</h2>
-    </div>
-    <div class="benefits-grid reveal">
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div>
-          <h4>Your Coupling Diagnostic</h4>
-          <p>One-page snapshot of where your composition sits relative to 50 operations across frontier and enterprise. Fleet depth, governance maturity, composability, compression ratio. Benchmarked against the full cohort.</p>
-        </div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
-        </div>
-        <div>
-          <h4>The Contributor Edition</h4>
-          <p>Full report before it goes public. Methodology, anonymized cases, your diagnostic overlaid on the cohort. The raw material.</p>
-        </div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div>
-          <h4>Peer Introductions</h4>
-          <p>Two or three operators in the study building the closest thing to what you are building. Or solving the problem you described. Builder to builder. Frontier to enterprise where the crossover matters.</p>
-        </div>
-      </div>
-      <div class="benefit-item">
-        <div class="benefit-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--highlight)" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <div>
-          <h4>Industry Patterns</h4>
-          <p>How the new primitive is taking shape across the cohort. Which composition patterns are emerging. Which failure modes cluster. Which economic models hold under stress.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ABOUT -->
 <section id="about" class="section section-dark">
   <div class="section-inner">
@@ -463,8 +430,7 @@ a { color: var(--accent); text-decoration: none; }
       <div class="about-text">
         <span class="section-label">About CMPRSSN</span>
         <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:600;line-height:1.15;color:var(--text);margin-bottom:1.5rem;">Who we are.</h2>
-        <p>CMPRSSN studies human-agent compositions. What determines whether the integration between people and agents compounds or hits a wall. Three people, AI-native practice. Living and practicing at the frontier.</p>
-        <p>First cycle of a semi-annual research series. Fifty conversations, two populations: enterprise leaders navigating legacy, frontier operators who are building their legacies from scratch. The contrast is the method.</p>
+        <p>CMPRSSN maps human-agent compositions at the frontier &mdash; the operational patterns, governance primitives, and economic models emerging where people and agents work together in production. Three people, AI-native practice. First cycle of a semi-annual research series.</p>
         <p class="about-authors">Research led by <strong>Yalor Mewn</strong>, <strong>Mikyö Clark</strong>, <strong>Lisa Rousey-Rueth</strong>, <strong>Ryan Van Sickle</strong>, and <strong>Jeremias Pedreira</strong>.</p>
       </div>
       <div class="about-stats">
@@ -522,7 +488,7 @@ a { color: var(--accent); text-decoration: none; }
         <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAEsASwDASIAAhEBAxEB/8QAHQABAQEBAQADAQEAAAAAAAAAAAkIBwYCBAUDAf/EAEsQAAEDAgMDBgkKAwYFBQAAAAABAgMEBQYHEQgSIRgxQVaUswkiNjhRYXR10hMWMjdxdoGVtNMUFUIjUmKCobEXM0ORwTRTY3Ky/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AMZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH27NbLjebpTWq00NRXV1S9I4KeCNXySOXoRE4qB9QGo8r9jbGV4lgrMc3Klw7QLo59LA5J6xycF04f2bOfn3nKip9E0Zg7Zeyaw38lI7Db71UxtVvy11qHTb2uuqrGm7Eq8f7nDRNOIE0AVvost8u6LT+DwFham0dvp8laIGaO9PBnPwTifofNPC3Vqzdhi+ECQAK/8AzTwt1as3YYvhHzTwt1as3YYvhAkACv8A808LdWrN2GL4R808LdWrN2GL4QJAAr/808LdWrN2GL4R808LdWrN2GL4QJAAr/8ANPC3Vqzdhi+EfNPC3Vqzdhi+ECQAK/8AzTwt1as3YYvhHzTwt1as3YYvhAkACv8A808LdWrN2GL4R808LdWrN2GL4QJAAr/808LdWrN2GL4R808LdWrN2GL4QJAAr/8ANPC3Vqzdhi+EfNPC3Vqzdhi+ECQAK/8AzTwt1as3YYvhHzTwt1as3YYvhAkACvk+DcITxLFPhWxSxu52vt8Sov4K081esksorvSrTVeXOGo2KiprSULKV/FNF8eJGu+zjw50AlQDemPti/BNyhfNg+93Kw1SMXciqF/ioHO11TXXR6cNU13l6F04LvZOzZyYzCyxncuJbI9bfvbrLnSKs1I/jonjoniKq8zXo1y+gDngAAAAAAAAAAAH2rTb627XWktVup31NbWTsp6eFn0pJHuRrWp61VUQD9jLrBmIcf4spMM4ZoXVVfUrqqrwjhYn0pJHf0sTXiv2ImqqiLSPIPJDCeUtnYtDAyvv80SNrLtNGnyr16WR/wDtx6/0pz6JvK5UTRs1ZSWzKjAVPRpAx1/roo5rvVLo5zpd1NYmuT/psVVRE6eK86nUJ5oqeCSeeVkUUbVe973I1rWomqqqrzIidIHzPx8TYpwzhin/AIjEeILVZ4lTVHVtWyHe+zeVNfwMjbQW15UfxFRh7KvdiZG90ct8mY1/ymnD+wYuqImv9bkXXoROcyPfrxdr/dJrre7lV3KumXWSoqpnSSO+1VXUCk1z2nckKBz2Oxsyokb/AE09BUyIvHTg5I93/X/wfn8rDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSXlYZJdY638sn+EcrDJLrHW/lk/wk2gBSmDatyQklRj8U1ULV53vtdSqJ/wBmKv8AoeswrnflNiaVsNox7ZXSu03YqmVaV7lXoRsyNVV9SISqAFmD611t1vu1unt11oaWvoqhu5NT1MTZIpG+hzXIqKnqUl3lLnhmHlvW0/8AJ75UVNqY9qzWurd8pBKxERFaiO1WPg1ERWaKmidHAoJkPnJhbN2xS1dmV9FcqXRK22zvRZYdeZyKn02L0OT8UReAGVNrfZtfg9KnHOAqWWbD6qslwoG+M636rrvs6Vh9Kc7Ofi36OWyy8jGSMdHI1r2ORUc1yaoqL0KTu2zckv8Ah1ihMUYcpN3Cl2lXSONujaGoXVVi06GKibzPR4zdPFRVDPIAAAAAAABqPwe2XkV+x5XY7uLGPpcPtSKjY5UXeqpWqm/p6GM3uf8Aqe1U4tUy4Uv2KMN/N3Z5sTntYk91dLcpd1mmvyjtGaroiqvybY+K/YmqIgHaTFW3nnRJPWy5VYbqpoo6dyOvk8b9GzKrUc2nRU52prq716N6FNf4zvtNhfCF4xJWN3qe10M1ZI3e0VyRsV26i+ldNE+0kZiG7Vt9vtferlK6Wsrqh9RO9XK7V73Kq8XKq9PSqgfQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPQZeYvveBMX0GJ7BVPp6yjlR2iOVGys18aN6dLXJwVDz4ArplhjK15gYEteLbPvNpbhDvrG5UV0L0VWvjdp0tcip69Nek+nnRg2LH+V1/wAJvaxZa6kclK5+mjKhvjROVdOCI9G6+rUy14N/GdS264hwDUz71M+BLpSMd/Q9rmxyon2o6NdP8Kr6TaoEbq+kqaCuqKGshfBU08roponpo5j2ro5qp6UVFQ/gdj2zMNfNraGxE2OFkVNc3MucO6v0vlW6yOVNV0VZUl/34IqHHAAAAAAAVvyfo5LdlLg63yrrJS2GhhcvrbAxF/2JIFf8CeRFh920/dNA5rtpV7qDZrxW5j92SZtNA3n4o+piRycP8O8TKKS7dfm23z2mk79hNoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO07Ede6i2lMMt39yOqbVQSc/FFppFanD/E1vOUvJgbH3nJYO9pl7iQp+BgrwkNNuZtYfrNH/wBrYWxaqni+JPMvD1+Px/Ay4az8JR5b4S92zd6ZMAAAAAABX/AnkRYfdtP3TSQBX/AnkRYfdtP3TQOS7dfm23z2mk79hNopLt1+bbfPaaTv2E2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6zsfeclg72mXuJCn5MDY+85LB3tMvcSFPwMNeEo8t8Je7Zu9MmGs/CUeW+Evds3emTAAAAAAAV/wJ5EWH3bT900kAV/wJ5EWH3bT900Dku3X5tt89ppO/YTaKS7dfm23z2mk79hNoAAAAAAAAAAAPtWm3112udNbLZSTVlbVStigghYrnyPcuiNaic6qp2ut2T86KWw/zRbHQzSoxXvoIa+N1Q3RebTXccunHRrl10059EP1/B52ylr8+56qoZvS26yVFTTroi7r1kiiVeKcPElenDRePo1RaGARqnhlp55IJ4nxSxuVkkb2q1zXIuioqLzKi9B8Ds22rbKW17R+JWUjNxtR8hUvTRETfkhY5ypoic66r6dVU4yAAAA93lLlLjnNGqqIsJWps0FKrUqaueRIoIlcvBFcvOunHdaironMeXwpYrlifE1tw7Z4flq+41LKanZzJvPVERVXoamuqr0IiqVaykwPa8ucv7ZhK0o50NGxVkldor5pXKrnvcuia6uVdPQiInMgE2s3ckswcrqeCtxPaolt1Q9Yo62kmSaHf4+K5U0VqqiapvImvRqqKic3KtbRlupbpkNjmmrGOdGyx1VQ1EcqePDGsrF/BzGrp0kpQAAAAAAAAAAA6zsfeclg72mXuJCn5MDY+85LB3tMvcSFPwMNeEo8t8Je7Zu9MmGs/CUeW+Evds3emTAAAAAAAV/wJ5EWH3bT900kAV/wJ5EWH3bT900Dku3X5tt89ppO/YTaKS7dfm23z2mk79hNoAAAAAAAAAAANM+Di+u+8/duf9TTG/wAwB4OL677z925/1NMb/Am1t1+clfPZqTuGHDDue3X5yV89mpO4YcMAAHUtmLK9+auaFNZalkqWakYtXdJGP3FSFFREY12i+M5yomnPpvKnMBpXwf2VTLTh6TM+7wOSvujH09sa5f8Al028iOk3VTVHOcxURdfopw4O46xPhBDFTwRwQRMiijajGMY1Gta1E0REROZEToPmB4zPb6kMefdu4/ppCTRWXPb6kMefdu4/ppCTQAAAAAAAAAAAdZ2PvOSwd7TL3EhT8mBsfeclg72mXuJCn4GGvCUeW+Evds3emTDWfhKPLfCXu2bvTJgAAAAAAK/4E8iLD7tp+6aSAK/4E8iLD7tp+6aByXbr822+e00nfsJtFJduvzbb57TSd+wm0AAAAAAAAAAAGmfBxfXfefu3P+ppjf5gDwcX133n7tz/AKmmN/gTa26/OSvns1J3DDhh3Pbr85K+ezUncMOGAfOCGWonjggifLLI5GRxsarnOcq6IiInOqr0FR9mnK+nyqyypbK9jVu9WqVd1kR6P1qFaiKxrtE8RqJoifavSpmnwfmVTLtepsz7xA5aa1zOp7S1y8JJ9zSSRWqnFGteiNXX6Sr0t4bkA+pebnQWa01d2utXFSUNHC6aonlXRsbGpqrl+xEPP5R4xZj/AC8tWMI6J1FHcklfHA5+85jGyvY3VfTo1FX1qZg2/c33sVuVWH6pzVVGVF6qIZtOCo7dpXInpRWvd/kT0odx2PvNtwd7NL38gHps9vqQx5927j+mkJNFZc9vqQx5927j+mkJNAAAAAAAAAAAB6rKTFrsCZlWHFyQvnbbKtsssTFRHSRrq17UVUVEVWq5Px6OcplY85MrrvhuO/0+O8Pw0jomSSNqbhFFLArkXRkjHO3mu4Kmipx04akowB2ba/zOt+Z2aq1lilfLZLXTJRUcjmK35ZUc5z5UReOjlXRNdPFa3VEXU4yAAAAAAACv+BPIiw+7afumkgCv+BPIiw+7afumgcl26/NtvntNJ37CbRSXbr822+e00nfsJtAAAAAAAAAAABpnwcX133n7tz/qaY3+YA8HF9d95+7c/wCppjf4E2tuvzkr57NSdww51k7gevzGzHtGEqBHN/jJtaiVOCQwNTekfroqJo1F0151VE6Tou3X5yV89mpO4Yan2J8qmYBy2ZiG5QOZf8Rwx1E6PXVYIOLoo0TRFaqo7ecnp0RfooB2vClituGMM23Dtnh+RoLdTMpqdnOu6xERFVely6aqvSqqp5TPvMqgyry5rcT1TIqmrRWw0FG+TdWpncvBv2Imrl9TV6dD3sj2RsdJI5rGNRVc5y6IiJ0qTR2uM3Zcz8xJYLdO9MN2dz6agjbKro6hzXOR1Tp6Xppp6Go3pVQOR3y63K+XiqvF4rZq6vq5VlqKiZ28+Ry86qpTLY+823B3s0vfyEwCn+x95tuDvZpe/kA9Nnt9SGPPu3cf00hJorLnt9SGPPu3cf00hJoAAAAAAAAAAAAAAAAAAAAAAFf8CeRFh920/dNJAFf8CeRFh920/dNA5Lt1+bbfPaaTv2E2iku3X5tt89ppO/YTaAAAAAAAAAAADTPg4vrvvP3bn/U0xv8AMAeDi+u+8/duf9TTG/wMt12VTMfba99xDdoHPseHIbfUPRV0bPU/IsdFGqKio5qbqucno3UX6RqQ/wAaxjVc5rWor11cqJzroiar+CIn4Hn8yMXWvAmB7riu8SNbS2+ndKjN9Gumfp4kTVX+p7tGp61A4Tt05vvwdhJmBbDVOjvl8hVaieGbdkoqZHJqvDjrJ4zE9SP9RP49HmXjG749xtc8VXqZ76munc9kavVzaePVdyJmv9LU0RPs151U84AKf7H3m24O9ml7+QmAU/2PvNtwd7NL38gHps9vqQx5927j+mkJNFZc9vqQx5927j+mkJNAAAAAAAAAAAB84IZaieOCCJ8ssjkZHGxquc5yroiIic6qvQaNsGxxmfc8NtudTXWK2VkkSSRUFVNJ8omqIu69WsVGO0VeHHimi6a6p4DZOo6eu2isFwVMbZGNr1mRFRF8eON8jF4+hzUX8Co4Ef8AGeGb5g/EtZhzEdvloLlRv3JYn/6OavM5qpoqOTgqKiofjmqfCR0FNFmVhu4xs3aiptDopVTmcjJXK38fHXj9noMrAAAAAAAr/gTyIsPu2n7ppIAr/gTyIsPu2n7poHJduvzbb57TSd+wm0Ul26/NtvntNJ37CbQAAAAAAAAAAAaZ8HF9d95+7c/6mmN/mAPBxfXfefu3P+ppjf4AwFt15vvxXi9cAWKqd/JLHMqVkkM2rK2p0bqionREqOan+LeX0GltrnNpmV+W8kdulauIryj6S3tbJuvgRWLvVP8Ak1bp/ic3o1JozzS1E8k88r5ZZHK+SR7lc5zlXVVVV51VekD4AAAU/wBj7zbcHezS9/ITAKf7H3m24O9ml7+QD02e31IY8+7dx/TSEmisue31IY8+7dx/TSEmgAAAAAAAAAAA6zsfeclg72mXuJCn5MDY+85LB3tMvcSFPwMNeEo8t8Je7Zu9MmGs/CUeW+Evds3emTAAAAAAAV/wJ5EWH3bT900kAV/wJ5EWH3bT900Dku3X5tt89ppO/YTaKS7dfm23z2mk79hNoAAAAAAAAAAAOl7NWZUeVealHiWrhqJ7dJC+jr4oFRHuhfoqqiKnHdc1r9NU13dNUN71u0VkxTWNbsmOrfPFu7zYImvWocu7vInyW7vIq83jIiIvBVRSXoA6Bn5mbcs1cw6zElUk1PQppFbqJ8u82lhRETROjecqbztOlV6EQ5+AAAAA2ZsZ7QOEMO4DjwHje5/yiSglkdQVkyPdDLE9yvViqiLuOaqu010aqKiJx58ZgDd21ltFYIfltdcG4MvUV8u13h/hZpqRzvkKaB2m+qyJoj1c1VajWqvOu9zbrsIgAAAAAAAAAAAB1nY+85LB3tMvcSFPyYGx95yWDvaZe4kKfgYa8JR5b4S92zd6ZMNZ+Eo8t8Je7Zu9MmAAAAAAAr/gTyIsPu2n7ppIAr/gTyIsPu2n7poHJduvzbb57TSd+wm0Ul26/NtvntNJ37CbQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdZ2PvOSwd7TL3EhT8mBsfeclg72mXuJCn4GGvCUeW+Evds3emTDWfhKPLfCXu2bvTJgAAAAAAK9ZczsqcvcN1MaORktppXtR3OiLE1eJIUqxs43eC+ZDYJr6eb5ZrbNT0z36qqrJCxIZNVXp343Iv/nnA8htzRSSbNeIXsbq2Keje9deZP4mNP8AdUJrFVdpOwSYmyIxjaIW78rra+oibpqrnwqkzWp61WNET7SVQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdd2OIpJtpTBzI27zknneqa6cG00qr/oilOyeHg+7BJdc9/5vu/2Vlts9QrlTVN+REha31KqSPX/KpQ8DC/hJ5Y1x9hWBHf2jLXI9yacyLKqJ/wDlf+xk80X4Qq509fn5FSQq1X22y01LNo5F0er5Zk1RObxZW8F+3pQzoAAAAAADePg68a09xy9ueBqiZv8AHWiqdVU8eiJvU0uirp6d2Tf1Xo32oYOOkbNuYqZYZs2zElR8qttejqS5Mj1VzqeTTeXROfdcjX6dKsQCp8jGSMdHI1r2ORUc1yaoqL0KS42nctpcss2LlaIad7LPVuWrtUiou6sD113EXpVi6sXp4IvShUC21tHc7dTXK31MVVR1cLJ6eeJ28yWNyI5rmr0oqKiovrOfbQ2UtpzdwT/Jqub+DuVI5ZrbWomvyMqpoqOTpY7gip6kXnRAJYA9Bj/BuJMCYkqLBie2TUFZC5UTfau5K1F4PjdzPavQqHnwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaj2RNnOuxPc6THGOKKajsNLK2WiopmK19e9q6o5yLzQoun/25k4aqB3TYWy8qsFZTPvF1pZaW64imSpkhlYjXxwM1bCippqmqK5+iqvB6cy6nfp5oqeCSeeVkUUbVe973I1rWomqqqrzIidJ8zNu3hmnBhTLyTAtsq92+4hiRszG670NCquSR2vN46tWPTpRX+gDEmcGKfnrmhiLFKI1I7hXySQoiuXSJF3Y/pcfoI3oT7E5k8oAAAAAAAAABqPY52h48GOgwDjap0w7LKv8AAV71/wDQPcvFj/8A4VVddf6FVVXxVVW70jeyRjZI3NexyIrXNXVFRelCNBoXZ02ncQ5cw0mHMSRS3zC0S6NanjVdIzTRGwuc5GqxP7jvwVoG6szMvsJZj2BLLi60sr6Zjlkhej3MlgfppvMe1UVF9XMvSioZUzE2J61sz6nAOK6eWNVcv8Hd2qxzU1VURJY0Xe4aJxanFNdePDUmWeZmCMx7ctZhG/0te5jUdNSqu5UQdHjxO0cia8N7TdXoVT2AE0LnstZ30Tn7uEGVkbf+pT3Gmci8dODVkR3r5v8Ayfn8m7O3qDW9pg/cKfgCYHJuzt6g1vaYP3Bybs7eoNb2mD9wp+AJgcm7O3qDW9pg/cHJuzt6g1vaYP3Cn4AmBybs7eoNb2mD9wcm7O3qDW9pg/cKfgCYHJuzt6g1vaYP3Bybs7eoNb2mD9wp+AJgcm7O3qDW9pg/cHJuzt6g1vaYP3Cn4AmBybs7eoNb2mD9wcm7O3qDW9pg/cKfgCYHJuzt6g1vaYP3Bybs7eoNb2mD9wp+AJgcm7O3qDW9pg/cHJuzt6g1vaYP3Cn4AmBybs7eoNb2mD9wcm7O3qDW9pg/cKfgCYkGzVnfNKkbMBVSOXmV9ZTMT/usiIh6zCux5mzdZW/zf+S2CLgrlqaxJn6epsKORV+1yfaUPAHAcmtlfAGBpKe53prsU3uJUe2arZu08T046sh1VOC9L1d6U0O/H8a6rpaCjlrK6phpaaFqvlmmkRjGNTnVzl4InrUzznbtX4Jwlbp6LBNTS4pvy6sjWJVdRQrxTefImnyiepi8f7zecDomfub2Hso8Jrc7m5tVdKlHNtttY/SSpenSv92NNU3ndHMmqqiLM3MDF19x1iyuxNiOsdVV9Y9XO59yNv8ATGxFVd1jU4In+66qf5jrF2IscYkqMQ4ouk1xuE/BZJF4MairoxjU4Namq6NRETivpPwgAAAAAAAAAAAAAD+9DV1VDVMqqKpmpahmu5LDIrHt1TRdFTinBVT8TrmENpnOXDmjG4rfdoEajfkrpC2o5tNF310k10TRfG46qq8eJxwAajt22zmIyVVuGF8LVEfQ2COeJenpWV3q6D9DlvYp6j2btUpkwAaz5b2Keo9m7VKOW9inqPZu1SmTABrPlvYp6j2btUo5b2Keo9m7VKZMAGs+W9inqPZu1SjlvYp6j2btUpkwAaz5b2Keo9m7VKOW9inqPZu1SmTABrPlvYp6j2btUo5b2Keo9m7VKZMAGs+W9inqPZu1SjlvYp6j2btUpkwAaz5b2Keo9m7VKOW9inqPZu1SmTABrPlvYp6j2btUo5b2Keo9m7VKZMAGs+W9inqPZu1SjlvYp6j2btUpkwAauqdt3GLmIlNgywxv14rJNK9NPsRU/wBzzt/2yM2rjSywUFPhyzudqjJ6Wie+Viapp/zXvYq8NPo9K8ObTOYA9XjnMjHmN10xXiu63SLVHJTyzqkDVRNEVIm6MRfWianlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//Z" alt="CMPRSSN" />
         <span>CMPRSSN</span>
       </div>
-      <p class="footer-copy">Agentic Intelligence Program · Frontier Track · Q2 2026</p>
+      <p class="footer-copy">Agentic Intelligence Program &middot; Frontier Track &middot; Q2 2026</p>
     </div>
     <div>
       <p class="footer-contact">Questions? <a href="mailto:growth@cmprssn.xyz">growth@cmprssn.xyz</a></p>
@@ -531,13 +497,12 @@ a { color: var(--accent); text-decoration: none; }
 </footer>
 
 <script>
-// HERO CANVAS — node network / cybernetic mesh
+// HERO CANVAS
 (function() {
   const canvas = document.getElementById('hero-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let w, h, time = 0, nodes = [];
-
   function resize() {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     w = canvas.parentElement.offsetWidth;
@@ -549,64 +514,47 @@ a { color: var(--accent); text-decoration: none; }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     initNodes();
   }
-
   function initNodes() {
     nodes = [];
     const count = Math.floor((w * h) / 18000);
     for (let i = 0; i < count; i++) {
       nodes.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        r: 1.5 + Math.random() * 1.5,
-        phase: Math.random() * Math.PI * 2
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+        r: 1.5 + Math.random() * 1.5, phase: Math.random() * Math.PI * 2
       });
     }
   }
-
   function draw() {
     ctx.clearRect(0, 0, w, h);
     time += 0.004;
-
-    // Subtle grid
     ctx.strokeStyle = 'rgba(126,200,212,0.025)';
     ctx.lineWidth = 0.5;
     for (let x = 0; x < w; x += 80) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
     for (let y = 0; y < h; y += 80) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
-
-    // Update and draw nodes
     const connectionDist = 140;
     for (let i = 0; i < nodes.length; i++) {
       const n = nodes[i];
       n.x += n.vx; n.y += n.vy;
       if (n.x < 0 || n.x > w) n.vx *= -1;
       if (n.y < 0 || n.y > h) n.vy *= -1;
-
       const pulse = 0.5 + 0.5 * Math.sin(time * 1.5 + n.phase);
       ctx.beginPath();
       ctx.arc(n.x, n.y, n.r * (0.8 + pulse * 0.4), 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(126,200,212,' + (0.12 + pulse * 0.12) + ')';
       ctx.fill();
-
-      // Connections
       for (let j = i + 1; j < nodes.length; j++) {
         const m = nodes[j];
         const dx = n.x - m.x, dy = n.y - m.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < connectionDist) {
           const alpha = (1 - dist / connectionDist) * 0.08;
-          ctx.beginPath();
-          ctx.moveTo(n.x, n.y);
-          ctx.lineTo(m.x, m.y);
+          ctx.beginPath(); ctx.moveTo(n.x, n.y); ctx.lineTo(m.x, m.y);
           ctx.strokeStyle = 'rgba(126,200,212,' + alpha + ')';
-          ctx.lineWidth = 0.7;
-          ctx.stroke();
+          ctx.lineWidth = 0.7; ctx.stroke();
         }
       }
     }
-
-    // Central waveform accent
     ctx.beginPath();
     ctx.strokeStyle = 'rgba(126,200,212,0.06)';
     ctx.lineWidth = 1.2;
@@ -617,12 +565,9 @@ a { color: var(--accent); text-decoration: none; }
       if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
     }
     ctx.stroke();
-
     requestAnimationFrame(draw);
   }
-
-  resize();
-  draw();
+  resize(); draw();
   window.addEventListener('resize', resize);
 })();
 
@@ -652,10 +597,22 @@ if (mt && mm) {
   mt.addEventListener('click', () => {
     const open = mm.classList.toggle('open');
     mt.setAttribute('aria-expanded', open);
+    mm.setAttribute('aria-hidden', !open);
+    mt.querySelectorAll('span').forEach((s, i) => {
+      if (open) {
+        if (i === 0) { s.style.top = '9px'; s.style.transform = 'rotate(45deg)'; }
+        if (i === 1) { s.style.opacity = '0'; }
+        if (i === 2) { s.style.top = '9px'; s.style.transform = 'rotate(-45deg)'; }
+      } else {
+        s.style.top = ''; s.style.transform = ''; s.style.opacity = '';
+      }
+    });
   });
   mm.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     mm.classList.remove('open');
     mt.setAttribute('aria-expanded', 'false');
+    mm.setAttribute('aria-hidden', 'true');
+    mt.querySelectorAll('span').forEach(s => { s.style.top = ''; s.style.transform = ''; s.style.opacity = ''; });
   }));
 }
 </script>
